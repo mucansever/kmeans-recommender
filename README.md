@@ -1,5 +1,7 @@
 # How to build a Recommendation System in minutes?
 
+*Authors: [Berfin Kayar](#https://github.com/berfinkayar), [Mutlu Cansever](#https://github.com/mucansever)*
+
 ## Abstract
 K-Means is an unsupervised learning algorithm used for partitioning observations into k clusters. It's very widely used in building recommender systems because of it's simplicity and feasible results. We provided a very simple guide on how to include K-Means into your application to build a recommendation system.
 
@@ -61,7 +63,7 @@ print('users.shape:', users.shape)
 # remove movies watched by less then 50 people
 users = users.loc[:, users.astype(bool).sum(axis=0) >= 50]
 
-# train test split 8:2
+# train test split 9:1
 train = users.iloc[:int(users.shape[0] * 0.9), :]
 print('train.shape:', train.shape)
 test = users.iloc[int(users.shape[0] * 0.9):, :]
