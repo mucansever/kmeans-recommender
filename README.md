@@ -128,12 +128,7 @@ for i in range(3, 11):
 
 Out:
 
-![Silhouette Graph for K=3](s3.png)
-![Silhouette Graph for K=4](s4.png)
-![Silhouette Graph for K=5](s5.png)
-![Silhouette Graph for K=6](s6.png)
-![Silhouette Graph for K=7](s7.png)
-![Silhouette Graph for K=8](s8.png)
+![Silhouette Graphs](silhouette.png)
 
 Fig 3. Silhouette Graphs for K3-8.
 
