@@ -19,7 +19,7 @@ K-Means works by following a very simple set of steps (See Figure 1. for visuali
 4. Assign data point to closest cluster.
 5. Compute centroids again by taking the mean of data points in each cluster.
 
-![KMeans Visualization ](kmeans1.png)
+![KMeans Visualization ](img/kmeans1.png)
 Fig 1. [KMeans Visualization from Wikipedia](#https://en.wikipedia.org/wiki/K-means_clustering)
 
 ## Building a Recommender System
@@ -102,7 +102,7 @@ plt.show()
 
 Out:
 
-![Distortions Graph](elbow.png)
+![Distortions Graph](img/elbow.png)
 
 Figure 2. Distortions/K graph for elbow method
 
@@ -125,7 +125,7 @@ for i in range(3, 11):
 
 Out:
 
-![Silhouette Graphs](silhouette.png)
+![Silhouette Graphs](img/silhouette.png)
 
 Fig 3. Silhouette Graphs for K3-8.
 
