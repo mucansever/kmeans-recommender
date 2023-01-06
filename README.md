@@ -150,7 +150,8 @@ def get_recommendations(user):
     recommendations = movies.iloc[recommendations.index]['movie_name'].to_list()
     return recommendations
 
-get_recommendations(test.iloc[0])
+recommendations = get_recommendations(test.iloc[0])
+print(*recommendations, sep = "\n")
 ```
 
 Out:
