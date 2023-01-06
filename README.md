@@ -54,6 +54,7 @@ Because KMeans performs very poorly with sparse datasets and ours is as sparse a
 ```python
 # read ml-100k/u.data to pandas without timestamp column, user_id as index, movie_id as columns and rating as values
 ratings = pd.read_csv('ml-100k/u.data', sep='\t', header=None, usecols=[0, 1, 2], names=['user_id', 'movie_id', 'rating'])
+movies = pd.read_csv('ml-100k/u.item', sep='|', header=None, usecols=[0, 1], names=['movie_id', 'movie_name'], encoding='latin-1')
 users = ratings.pivot(index='user_id', columns='movie_id', values='rating').fillna(0)
 
 # sort users by number of nonzero columns
@@ -151,26 +152,27 @@ def get_recommendations(user):
 
     # find highest rated movies in cluster that user_id has not rated
     recommendations = cluster[unrated_movies].mean().sort_values(ascending=False).head(10)
+    recommendations = movies.iloc[recommendations.index]['movie_name'].to_list()
     return recommendations
 
-get_recommendations(test.iloc[0])
+recommendations = get_recommendations(test.iloc[0])
+print(*recommendations, sep = "\n")
 ```
 
 Out:
 
 ```
-movie_id
-134    3.692308
-276    3.076923
-483    3.076923
-275    3.000000
-185    3.000000
-603    3.000000
-153    2.769231
-208    2.769231
-531    2.615385
-8      2.615385
-dtype: float64
+Recommendations for user 345:
+2001: A Space Odyssey (1968)
+Restoration (1995)
+Maltese Falcon, The (1941)
+Leaving Las Vegas (1995)
+Blues Brothers, The (1980)
+It Happened One Night (1934)
+Monty Python's Life of Brian (1979)
+This Is Spinal Tap (1984)
+Kama Sutra: A Tale of Love (1996)
+Dead Man Walking (1995)
 ```
 
 ## References
